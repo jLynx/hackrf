@@ -1,12 +1,7 @@
 name: Build
 
-on:
-  push:
-  pull_request:
-
-  # Run automatically every monday
-  schedule:
-    - cron: 1 12 * * 1
+on:    
+  workflow_dispatch:
 
 env:
   WIN_LIBUSB_INC: -DLIBUSB_INCLUDE_DIR=C:/vcpkg/installed/x64-windows/include/libusb-1.0
