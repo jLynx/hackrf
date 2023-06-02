@@ -85,7 +85,7 @@ jobs:
     - name: Configure CMake (hackrf-tools, Windows)
       working-directory: ${{runner.workspace}}/host/hackrf-tools/build
       run: |
-        cmake $env:GITHUB_WORKSPACE/host/hackrf-tools/ $env:WIN_FFTW_INC $env:WIN_FFTW_LIB -DLIBHACKRF_INCLUDE_DIR=$env:GITHUB_WORKSPACE/install/include/libhackrf -DLIBHACKRF_LIBRARIES=$env:GITHUB_WORKSPACE/install/bin/hackrf.lib
+        cmake $env:GITHUB_WORKSPACE/host/hackrf-tools/ $env:WIN_FFTW_INC $env:WIN_FFTW_LIB -DLIBHACKRF_INCLUDE_DIR=$env:GITHUB_WORKSPACE/install/include/libhackrf -DLIBHACKRF_LIBRARIES=$env:GITHUB_WORKSPACE/install/lib/hackrf.lib
       if: matrix.os == 'windows-latest'
 
     - name: Build (hackrf-tools)
