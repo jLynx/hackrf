@@ -15,7 +15,7 @@ jobs:
   host:
     strategy:
       matrix:
-        os: ['macos-latest', 'ubuntu-latest', 'windows-latest']
+        os: ['windows-latest']
 
       # Don't cancel all builds when one fails
       fail-fast: false
@@ -95,3 +95,10 @@ jobs:
       # hackrf.h, despite us having installed it and specified its location in
       # the previous steps above.
       if: matrix.os != 'windows-latest'
+      
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: dist-without-markdown
+        path: |
+            host
