@@ -87,8 +87,8 @@ jobs:
       # hackrf.h, despite us having installed it and specified its location in
       # the previous steps above.
       
-    - name: Archive production artifacts
-      uses: actions/upload-artifact@v3
+    - name: Save artifacts
+      uses: actions/upload-artifact@v2
       with:
-        name: dist-without-markdown
-        path: '**/*'
+        name: Build Artifacts
+        path: ${{runner.workspace}}/host/hackrf-tools/build
